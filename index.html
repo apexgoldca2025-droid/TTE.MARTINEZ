@@ -39,7 +39,7 @@
                 <i class="fa-solid font-lg fa-lungs text-sky-400"></i> Intercambio Gaseoso (Hematosis)
             </h1>
             <p class="text-xs md:text-sm text-gray-400 mt-1">
-                Simulación interactiva del paso de Oxígeno ($O_2$) y Dióxido de Carbono ($CO_2$) a nivel alvéolo-capilar.
+                Simulación interactiva del paso de Oxígeno (O₂) y Dióxido de Carbono (CO₂) a nivel alvéolo-capilar.
             </p>
         </div>
         <div class="flex items-center gap-3">
@@ -58,10 +58,10 @@
             <div class="flex items-center justify-between mb-3 px-1">
                 <div class="flex items-center gap-4 text-xs md:text-sm font-medium">
                     <span class="flex items-center gap-1.5 text-sky-300">
-                        <span class="w-3 h-3 rounded-full bg-sky-400 inline-block shadow-[0_0_8px_rgba(56,189,248,0.8)]"></span> Oxígeno ($O_2$)
+                        <span class="w-3 h-3 rounded-full bg-sky-400 inline-block shadow-[0_0_8px_rgba(56,189,248,0.8)]"></span> Oxígeno (O₂)
                     </span>
                     <span class="flex items-center gap-1.5 text-amber-300">
-                        <span class="w-3 h-3 rounded-full bg-amber-400 inline-block shadow-[0_0_8px_rgba(251,191,36,0.8)]"></span> Dióxido de Carbono ($CO_2$)
+                        <span class="w-3 h-3 rounded-full bg-amber-400 inline-block shadow-[0_0_8px_rgba(251,191,36,0.8)]"></span> Dióxido de Carbono (CO₂)
                     </span>
                 </div>
                 <div class="text-xs text-gray-400 italic hidden sm:block">
@@ -92,10 +92,10 @@
 
                 <div class="flex items-center gap-2">
                     <button id="inhaleBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-1.5 rounded-md font-medium transition flex items-center gap-1">
-                        <i class="fa-solid fa-arrow-down-long"></i> Inhalar $O_2$
+                        <i class="fa-solid fa-arrow-down-long"></i> Inhalar O₂ Extra
                     </button>
                     <button id="exhaleBtn" class="bg-amber-600 hover:bg-amber-500 text-white text-xs px-3 py-1.5 rounded-md font-medium transition flex items-center gap-1">
-                        <i class="fa-solid fa-arrow-up-long"></i> Exhalar $CO_2$
+                        <i class="fa-solid fa-arrow-up-long"></i> Exhalar CO₂
                     </button>
                 </div>
 
@@ -109,7 +109,7 @@
             </div>
         </div>
 
-        <!-- Right: Concise Educational Dashboard -->
+        <!-- Right: Educational Dashboard -->
         <div class="flex flex-col gap-4">
             
             <!-- Real-time Transfer Counter -->
@@ -119,12 +119,12 @@
                 </h2>
                 <div class="grid grid-cols-2 gap-3">
                     <div class="bg-slate-900/80 border border-sky-900/50 p-3 rounded-lg text-center">
-                        <span class="text-xs text-sky-400 font-medium block">Oxígeno ($O_2$)</span>
+                        <span class="text-xs text-sky-400 font-medium block">Oxígeno (O₂)</span>
                         <span id="o2Count" class="text-2xl font-bold text-sky-200">0</span>
                         <span class="text-[10px] text-gray-500 block mt-0.5">Captado por sangre</span>
                     </div>
                     <div class="bg-slate-900/80 border border-amber-900/50 p-3 rounded-lg text-center">
-                        <span class="text-xs text-amber-400 font-medium block">Dióxido ($CO_2$)</span>
+                        <span class="text-xs text-amber-400 font-medium block">Dióxido (CO₂)</span>
                         <span id="co2Count" class="text-2xl font-bold text-amber-200">0</span>
                         <span class="text-[10px] text-gray-500 block mt-0.5">Liberado al alvéolo</span>
                     </div>
@@ -138,24 +138,24 @@
                         <i class="fa-solid fa-circle-info text-emerald-400"></i> ¿Cómo Funciona?
                     </h2>
                     <p class="text-xs text-gray-400 leading-relaxed mb-3">
-                        El intercambio de gases ocurre en los <strong class="text-gray-200">alvéolos pulmonares</strong> mediante <strong class="text-gray-200">difusión pasiva</strong> (de mayor a menor concentración).
+                        El intercambio de gases ocurre en los <strong class="text-gray-200">alvéolos pulmonares</strong> mediante <strong class="text-gray-200">difusión pasiva</strong> de forma continua e ininterrumpida.
                     </p>
 
                     <div class="space-y-2 text-xs">
                         <div class="p-2 bg-slate-900/50 rounded border-l-2 border-sky-400">
-                            <span class="font-semibold text-sky-300 block mb-0.5">1. Entrada de $O_2$</span>
-                            El oxígeno inhalado pasa del alvéolo a los eritrocitos (glóbulos rojos) atravesando la membrana alvéolo-capilar.
+                            <span class="font-semibold text-sky-300 block mb-0.5">1. Entrada de O₂</span>
+                            El oxígeno se transfiere hacia los eritrocitos al cruzar la membrana alvéolo-capilar.
                         </div>
                         <div class="p-2 bg-slate-900/50 rounded border-l-2 border-amber-400">
-                            <span class="font-semibold text-amber-300 block mb-0.5">2. Salida de $CO_2$</span>
-                            El dióxido de carbono metabólico producido por el cuerpo sale de la sangre hacia el alvéolo para ser exhalado.
+                            <span class="font-semibold text-amber-300 block mb-0.5">2. Salida de CO₂</span>
+                            El dióxido de carbono es expulsado desde la sangre venosa hacia el alvéolo.
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-gray-500 flex justify-between items-center">
                     <span>Proceso físico: Ley de Fick</span>
-                    <span class="text-sky-400 font-medium">Sin gasto de energía (ATP)</span>
+                    <span class="text-sky-400 font-medium">Ciclo Automático</span>
                 </div>
             </div>
 
@@ -183,8 +183,8 @@
         // State
         let isRunning = true;
         let speedMultiplier = 1;
+        let autoBreathTimer = 0;
 
-        // Resize Canvas dynamically
         function resizeCanvas() {
             const rect = canvas.getBoundingClientRect();
             canvas.width = rect.width;
@@ -193,7 +193,6 @@
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Particles & Entities Data
         let particles = [];
         let rBCs = [];
 
@@ -203,31 +202,34 @@
                 this.y = canvas.height * 0.78;
                 this.radius = 16;
                 this.speed = 1.2;
-                this.oxygenated = false;
-                this.oxygenLevel = 0.1; // 0 to 1
-                this.attachedO2 = []; // Attached O2 particles traveling inside
+                this.oxygenLevel = 0.1; 
+                this.attachedO2 = []; 
             }
 
             update() {
                 if (!isRunning) return;
                 this.x += this.speed * speedMultiplier;
-                
-                // Keep y position in capillary center
                 this.y = canvas.height * 0.78;
 
-                // Update positions of attached oxygen particles
-                this.attachedO2.forEach((p, index) => {
+                // Actualizar posición de partículas pegadas
+                this.attachedO2.forEach(p => {
                     p.x = this.x + p.offsetX;
                     p.y = this.y + p.offsetY;
                 });
 
-                // Reset position when offscreen
+                // Al salir de pantalla, reiniciar glóbulo y reciclar partículas
                 if (this.x - this.radius > canvas.width) {
                     this.x = -this.radius - 20;
-                    this.oxygenated = false;
                     this.oxygenLevel = 0.1;
-                    // Release attached particles
+                    
+                    // Remover las partículas O2 pegadas a este glóbulo
+                    particles = particles.filter(p => !this.attachedO2.includes(p));
                     this.attachedO2 = [];
+
+                    // Generar inmediatamente nuevas partículas O2 en el alvéolo para mantener la fluidez continua
+                    for (let i = 0; i < 6; i++) {
+                        particles.push(new Particle('O2', Math.random() * (canvas.width - 40) + 20, Math.random() * (canvas.height * 0.3) + 20));
+                    }
                 }
             }
 
@@ -235,7 +237,6 @@
                 ctx.save();
                 ctx.translate(this.x, this.y);
 
-                // RBC Body - Color shifts from dark purple/blue to bright scarlet red
                 const redVal = Math.floor(120 + this.oxygenLevel * 135);
                 const blueVal = Math.floor(80 - this.oxygenLevel * 60);
                 const greenVal = Math.floor(20 + this.oxygenLevel * 30);
@@ -244,12 +245,10 @@
                 ctx.shadowColor = `rgba(${redVal}, ${greenVal}, ${blueVal}, 0.5)`;
                 ctx.shadowBlur = 8;
 
-                // Biconcave Disk shape
                 ctx.beginPath();
                 ctx.ellipse(0, 0, this.radius * 1.3, this.radius * 0.8, 0, 0, Math.PI * 2);
                 ctx.fill();
 
-                // Inner depression
                 ctx.fillStyle = `rgba(0, 0, 0, 0.25)`;
                 ctx.beginPath();
                 ctx.ellipse(0, 0, this.radius * 0.6, this.radius * 0.35, 0, 0, Math.PI * 2);
@@ -265,9 +264,9 @@
                 this.x = x || (Math.random() * (canvas.width - 40) + 20);
                 
                 if (type === 'O2') {
-                    this.y = y || (Math.random() * (canvas.height * 0.35) + 30);
+                    this.y = y || (Math.random() * (canvas.height * 0.32) + 20);
                 } else {
-                    this.y = y || (canvas.height * 0.72 + (Math.random() * 30 - 15));
+                    this.y = y || (canvas.height * 0.74 + (Math.random() * 24 - 12));
                 }
 
                 this.radius = type === 'O2' ? 5 : 5.5;
@@ -281,29 +280,23 @@
             update() {
                 if (!isRunning) return;
 
-                // If traveling attached to a Red Blood Cell
-                if (this.attachedToRBC) {
-                    return; 
-                }
+                if (this.attachedToRBC) return;
 
                 this.x += this.vx * speedMultiplier;
                 this.y += this.vy * speedMultiplier;
 
                 const membraneY = canvas.height * 0.52;
 
-                // Behavior for O2 (Top -> Bottom)
                 if (this.type === 'O2') {
-                    // Slight pull downwards towards capillary
                     if (this.y < membraneY) {
-                        this.vy += 0.015;
+                        this.vy += 0.018; // Descenso hacia el capilar
                     }
                     
-                    // Bounce top/left/right boundaries
                     if (this.x < 15 || this.x > canvas.width - 15) this.vx *= -1;
-                    if (this.y < 20) this.vy = Math.abs(this.vy);
+                    if (this.y < 15) this.vy = Math.abs(this.vy);
 
-                    // Cross membrane and attach to nearest RBC
-                    if (this.y >= membraneY + 15) {
+                    // Adhesión a glóbulos rojos al cruzar la membrana
+                    if (this.y >= membraneY + 10) {
                         let closestRBC = null;
                         let minDist = 999;
 
@@ -316,13 +309,11 @@
                         });
 
                         if (closestRBC && minDist < 45) {
-                            // Attach particle to RBC
                             this.attachedToRBC = true;
-                            this.offsetX = (Math.random() - 0.5) * (closestRBC.radius * 1.4);
-                            this.offsetY = (Math.random() - 0.5) * (closestRBC.radius * 0.8);
+                            this.offsetX = (Math.random() - 0.5) * (closestRBC.radius * 1.3);
+                            this.offsetY = (Math.random() - 0.5) * (closestRBC.radius * 0.7);
                             closestRBC.attachedO2.push(this);
 
-                            // Oxygenate RBC
                             if (closestRBC.oxygenLevel < 1) {
                                 closestRBC.oxygenLevel = Math.min(1, closestRBC.oxygenLevel + 0.35);
                             }
@@ -330,31 +321,27 @@
                             o2Transferred++;
                             o2CounterEl.innerText = o2Transferred;
                         } else if (this.y > canvas.height * 0.9) {
-                            // Reset O2 particle back to alveolus if missed
-                            this.y = 30;
+                            // Si se pasa sin tocar glóbulo, reaparece arriba
+                            this.y = 25;
                             this.x = Math.random() * (canvas.width - 40) + 20;
                             this.vy = Math.abs(this.vy);
                         }
                     }
                 } 
-                // Behavior for CO2 (Bottom -> Top)
                 else if (this.type === 'CO2') {
-                    // Pull upwards towards alveolus
                     if (this.y > membraneY) {
-                        this.vy -= 0.02;
+                        this.vy -= 0.022; // Elevación hacia el alvéolo
                     }
 
-                    // Bounce left/right boundaries
                     if (this.x < 15 || this.x > canvas.width - 15) this.vx *= -1;
 
-                    // Crossing membrane into alveolus
                     if (this.y <= membraneY - 20) {
                         co2Transferred++;
                         co2CounterEl.innerText = co2Transferred;
 
-                        // Recycle CO2 particle back to capillary
+                        // Reciclar CO2 continuamente en el vaso sanguíneo
                         this.y = canvas.height * 0.78 + (Math.random() * 20 - 10);
-                        this.x = Math.random() * (canvas.width * 0.5);
+                        this.x = Math.random() * (canvas.width * 0.6);
                         this.vy = (Math.random() - 0.5) * 1.2;
                     }
                 }
@@ -376,7 +363,6 @@
                 ctx.shadowBlur = 6;
                 ctx.fill();
 
-                // Inner core highlight
                 ctx.fillStyle = '#ffffff';
                 ctx.beginPath();
                 ctx.arc(this.x - 1.5, this.y - 1.5, this.radius * 0.3, 0, Math.PI * 2);
@@ -386,7 +372,6 @@
             }
         }
 
-        // Initialize Simulation Elements
         function initSimulation() {
             particles = [];
             rBCs = [];
@@ -395,55 +380,51 @@
             o2CounterEl.innerText = 0;
             co2CounterEl.innerText = 0;
 
-            // Spawn Red Blood Cells
             const rbcCount = 5;
-            const spacing = (canvas.width + 100) / rbcCount;
+            const spacing = (canvas.width + 120) / rbcCount;
             for (let i = 0; i < rbcCount; i++) {
                 rBCs.push(new RedBloodCell(i * spacing));
             }
 
-            // High density of Oxygen particles (O2)
-            for (let i = 0; i < 45; i++) {
+            // Partículas de Oxígeno iniciales
+            for (let i = 0; i < 40; i++) {
                 particles.push(new Particle('O2'));
             }
 
-            // Carbon Dioxide particles (CO2)
+            // Partículas de CO2 iniciales
             for (let i = 0; i < 18; i++) {
                 particles.push(new Particle('CO2'));
             }
         }
 
-        // Draw Environment (Alveolus, Membrane, Capillary Vessel)
         function drawBackground() {
             const w = canvas.width;
             const h = canvas.height;
             const membraneY = h * 0.52;
 
-            // 1. Alveolar Air Space (Top Background)
+            // Alvéolo
             const alveolusGrad = ctx.createLinearGradient(0, 0, 0, membraneY);
             alveolusGrad.addColorStop(0, '#0c1929');
             alveolusGrad.addColorStop(1, '#0f2b48');
             ctx.fillStyle = alveolusGrad;
             ctx.fillRect(0, 0, w, membraneY);
 
-            // Alveolar Label
             ctx.fillStyle = 'rgba(148, 163, 184, 0.4)';
             ctx.font = 'bold 12px sans-serif';
             ctx.fillText('ALVÉOLO PULMONAR (AIRE INHALADO)', 15, 25);
 
-            // 2. Capillary Blood Vessel (Bottom Background)
+            // Capilar Sanguíneo
             const capillaryGrad = ctx.createLinearGradient(0, membraneY, 0, h);
             capillaryGrad.addColorStop(0, '#2d0a12');
             capillaryGrad.addColorStop(1, '#1a050a');
             ctx.fillStyle = capillaryGrad;
             ctx.fillRect(0, membraneY, w, h - membraneY);
 
-            // Capillary Label
             ctx.fillStyle = 'rgba(244, 63, 94, 0.35)';
             ctx.font = 'bold 12px sans-serif';
             ctx.fillText('VASO CAPILAR SANGUÍNEO', 15, h - 15);
 
-            // 3. Alveolar-Capillary Membrane Structure
+            // Membrana
             ctx.strokeStyle = '#38bdf8';
             ctx.lineWidth = 3;
             ctx.shadowColor = 'rgba(56, 189, 248, 0.5)';
@@ -453,26 +434,33 @@
             ctx.lineTo(w, membraneY);
             ctx.stroke();
 
-            // Interstitial space thickness representation
             ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
             ctx.fillRect(0, membraneY - 4, w, 8);
 
-            ctx.shadowBlur = 0; // Reset shadow
+            ctx.shadowBlur = 0;
         }
 
-        // Main Animation Loop
+        // Bucle Principal
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             drawBackground();
 
-            // Update & Draw Red Blood Cells
+            // Automatización de entrada de aire (Inhalación continua)
+            if (isRunning) {
+                autoBreathTimer++;
+                if (autoBreathTimer % Math.floor(120 / speedMultiplier) === 0) {
+                    for (let i = 0; i < 4; i++) {
+                        particles.push(new Particle('O2', Math.random() * (canvas.width - 40) + 20, Math.random() * 40 + 20));
+                    }
+                }
+            }
+
             rBCs.forEach(rbc => {
                 rbc.update();
                 rbc.draw();
             });
 
-            // Update & Draw Gas Particles
             particles.forEach(p => {
                 p.update();
                 p.draw();
@@ -481,7 +469,7 @@
             requestAnimationFrame(animate);
         }
 
-        // Setup Controls & Listeners
+        // Listener de botones
         document.getElementById('playPauseBtn').addEventListener('click', function() {
             isRunning = !isRunning;
             this.querySelector('span').innerText = isRunning ? 'Pausar' : 'Reanudar';
@@ -497,18 +485,16 @@
         });
 
         document.getElementById('inhaleBtn').addEventListener('click', function() {
-            // Add abundant O2 particles on inhalation
-            for (let i = 0; i < 18; i++) {
+            for (let i = 0; i < 15; i++) {
                 particles.push(new Particle('O2', Math.random() * canvas.width, Math.random() * 80 + 20));
             }
         });
 
         document.getElementById('exhaleBtn').addEventListener('click', function() {
-            // Remove some CO2 from top air space
             particles = particles.filter(p => !(p.type === 'CO2' && p.y < canvas.height * 0.5));
         });
 
-        // Interactive Tooltip on Canvas Click/Hover
+        // Tooltip al hacer clic
         canvas.addEventListener('click', function(e) {
             const rect = canvas.getBoundingClientRect();
             const clickX = e.clientX - rect.left;
@@ -519,19 +505,19 @@
             if (Math.abs(clickY - membraneY) < 15) {
                 showTooltip("Membrana Alvéolo-Capilar: Pared ultra delgada que permite la difusión de gases.", clickX, clickY);
             } else if (clickY < membraneY) {
-                showTooltip("Cavidad Alveolar: Contiene aire rico en Oxígeno ($O_2$) proveniente de la inhalación.", clickX, clickY);
+                showTooltip("Cavidad Alveolar: Contiene aire rico en Oxígeno (O₂) renovado continuamente.", clickX, clickY);
             } else {
                 let hitRBC = false;
                 rBCs.forEach(rbc => {
                     if (Math.hypot(rbc.x - clickX, rbc.y - clickY) < rbc.radius * 1.5) {
-                        const status = rbc.oxygenLevel > 0.5 ? "Oxigenado (Hemoglobina rica en $O_2$)" : "Desoxigenado (Buscando $O_2$)";
+                        const status = rbc.oxygenLevel > 0.5 ? "Oxigenado (Hemoglobina rica en O₂)" : "Desoxigenado (Buscando O₂)";
                         showTooltip(`Glóbulo Rojo (Eritrocito): ${status}`, clickX, clickY);
                         hitRBC = true;
                     }
                 });
 
                 if (!hitRBC) {
-                    showTooltip("Torrente Sanguíneo: Capilar pulmonar donde circula la sangre.", clickX, clickY);
+                    showTooltip("Torrente Sanguíneo: Capilar pulmonar por donde circulan los eritrocitos.", clickX, clickY);
                 }
             }
         });
@@ -547,7 +533,6 @@
             }, 3000);
         }
 
-        // Initialize and Start Loop
         initSimulation();
         animate();
     </script>
