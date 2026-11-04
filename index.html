@@ -155,34 +155,32 @@
         </div>
     </main>
 
-    <!-- Interactive Buttons Section for Physical Laws -->
+    <!-- Small Interactive Buttons Section for Physical Laws -->
     <section class="max-w-6xl w-full mx-auto mt-6 bg-[#161b22] border border-gray-800 rounded-xl p-4 shadow-xl">
         <h2 class="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2">
             <i class="fa-solid fa-book-open text-sky-400"></i> Leyes Fisiológicas Relacionadas
         </h2>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-2">
-            <!-- Botón Ley de Fick -->
-            <button id="btnFick" class="bg-slate-900 hover:bg-slate-800 border border-sky-900/60 text-sky-300 text-xs md:text-sm font-medium py-2.5 px-4 rounded-lg transition flex items-center justify-between shadow-md">
-                <span><i class="fa-solid fa-atom mr-2"></i> Ley de Fick</span>
-                <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="arrowFick"></i>
+        <div class="flex flex-wrap items-center gap-2 mb-2">
+            <!-- Botón Pequeño Ley de Fick -->
+            <button id="btnFick" class="bg-slate-900 hover:bg-slate-800 border border-sky-900/60 text-sky-300 text-xs font-medium py-1.5 px-3 rounded-md transition flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-atom"></i> Ley de Fick <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 ml-1" id="arrowFick"></i>
             </button>
 
-            <!-- Botón Ley de Boyle -->
-            <button id="btnBoyle" class="bg-slate-900 hover:bg-slate-800 border border-amber-900/60 text-amber-300 text-xs md:text-sm font-medium py-2.5 px-4 rounded-lg transition flex items-center justify-between shadow-md">
-                <span><i class="fa-solid fa-wind mr-2"></i> Ley de Boyle</span>
-                <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="arrowBoyle"></i>
+            <!-- Botón Pequeño Ley de Boyle -->
+            <button id="btnBoyle" class="bg-slate-900 hover:bg-slate-800 border border-amber-900/60 text-amber-300 text-xs font-medium py-1.5 px-3 rounded-md transition flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-wind"></i> Ley de Boyle <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 ml-1" id="arrowBoyle"></i>
             </button>
         </div>
 
         <!-- Pestaña desplegable Ley de Fick -->
-        <div id="contentFick" class="hidden bg-slate-950/90 border border-sky-900/40 p-3.5 rounded-lg text-xs text-gray-300 leading-relaxed mt-2">
+        <div id="contentFick" class="hidden bg-slate-950/90 border border-sky-900/40 p-3 rounded-lg text-xs text-gray-300 leading-relaxed mt-2">
             <strong class="text-sky-300 block mb-1">¿De qué trata la Ley de Fick?</strong>
             Explica cómo se realiza la difusión de los gases. Indica que la velocidad con la que el oxígeno y el dióxido de carbono atraviesan la membrana alvéolo-capilar depende del área disponible, la diferencia de concentración y el grosor de la membrana.
         </div>
 
         <!-- Pestaña desplegable Ley de Boyle -->
-        <div id="contentBoyle" class="hidden bg-slate-950/90 border border-amber-900/40 p-3.5 rounded-lg text-xs text-gray-300 leading-relaxed mt-2">
+        <div id="contentBoyle" class="hidden bg-slate-950/90 border border-amber-900/40 p-3 rounded-lg text-xs text-gray-300 leading-relaxed mt-2">
             <strong class="text-amber-300 block mb-1">¿De qué trata la Ley de Boyle?</strong>
             Establece que la presión y el volumen de un gas son inversamente proporcionales. En la respiración, al expandirse el tórax, aumenta el volumen pulmonar y disminuye la presión interna, permitiendo que el aire exterior ingrese con facilidad.
         </div>
@@ -511,7 +509,7 @@
             speedMultiplier = e.target.value === 'fast' ? 2.2 : 1;
         });
 
-        // Lógica interactiva para las pestañas de las leyes (Fick y Boyle)
+        // Lógica interactiva para los botones pequeños de las leyes
         const btnFick = document.getElementById('btnFick');
         const btnBoyle = document.getElementById('btnBoyle');
         const contentFick = document.getElementById('contentFick');
