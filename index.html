@@ -109,24 +109,23 @@
             </div>
         </div>
 
-        <!-- Right: Educational Dashboard -->
+        <!-- Right: Educational Dashboard & Image Container -->
         <div class="flex flex-col gap-4">
             
-            <!-- Real-time Transfer Counter -->
-            <div class="bg-[#161b22] border border-gray-800 rounded-xl p-4 shadow-xl">
-                <h2 class="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-chart-line text-sky-400"></i> Moléculas Transferidas
+            <!-- Image Reference Container (Proporción 696x455) -->
+            <div class="bg-[#161b22] border border-gray-800 rounded-xl p-3 shadow-xl flex flex-col">
+                <h2 class="text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-image text-sky-400"></i> Esquema Anatómico
                 </h2>
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-slate-900/80 border border-sky-900/50 p-3 rounded-lg text-center">
-                        <span class="text-xs text-sky-400 font-medium block">Oxígeno (O₂)</span>
-                        <span id="o2Count" class="text-2xl font-bold text-sky-200">0</span>
-                        <span class="text-[10px] text-gray-500 block mt-0.5">Captado por sangre</span>
-                    </div>
-                    <div class="bg-slate-900/80 border border-amber-900/50 p-3 rounded-lg text-center">
-                        <span class="text-xs text-amber-400 font-medium block">Dióxido (CO₂)</span>
-                        <span id="co2Count" class="text-2xl font-bold text-amber-200">0</span>
-                        <span class="text-[10px] text-gray-500 block mt-0.5">Liberado al alvéolo</span>
+                <!-- Contenedor con aspect-ratio adaptado a 696x455 (~1.52) -->
+                <div class="w-full bg-slate-950 rounded-lg border border-slate-800 overflow-hidden relative flex items-center justify-center" style="aspect-ratio: 696 / 455;">
+                    <!-- Reemplaza el src con el enlace de tu imagen -->
+                    <img src="" alt="Esquema de Hematosis" class="w-full h-full object-cover hidden" id="topicImage">
+                    
+                    <!-- Placeholder visual en caso de que no haya imagen cargada aún -->
+                    <div id="imagePlaceholder" class="text-center p-4 text-gray-500 text-xs flex flex-col items-center justify-center gap-2">
+                        <i class="fa-solid fa-cloud-arrow-up text-2xl text-gray-600"></i>
+                        <span>Espacio para imagen (696 x 455 px)</span>
                     </div>
                 </div>
             </div>
@@ -173,12 +172,6 @@
         const ctx = canvas.getContext('2d');
         const tooltip = document.getElementById('canvasTooltip');
         const tooltipText = document.getElementById('tooltipText');
-
-        // Counters
-        let o2Transferred = 0;
-        let co2Transferred = 0;
-        const o2CounterEl = document.getElementById('o2Count');
-        const co2CounterEl = document.getElementById('co2Count');
 
         // State
         let isRunning = true;
@@ -317,9 +310,6 @@
                             if (closestRBC.oxygenLevel < 1) {
                                 closestRBC.oxygenLevel = Math.min(1, closestRBC.oxygenLevel + 0.35);
                             }
-
-                            o2Transferred++;
-                            o2CounterEl.innerText = o2Transferred;
                         } else if (this.y > canvas.height * 0.9) {
                             // Si se pasa sin tocar glóbulo, reaparece arriba
                             this.y = 25;
@@ -336,9 +326,6 @@
                     if (this.x < 15 || this.x > canvas.width - 15) this.vx *= -1;
 
                     if (this.y <= membraneY - 20) {
-                        co2Transferred++;
-                        co2CounterEl.innerText = co2Transferred;
-
                         // Reciclar CO2 continuamente en el vaso sanguíneo
                         this.y = canvas.height * 0.78 + (Math.random() * 20 - 10);
                         this.x = Math.random() * (canvas.width * 0.6);
@@ -375,10 +362,6 @@
         function initSimulation() {
             particles = [];
             rBCs = [];
-            o2Transferred = 0;
-            co2Transferred = 0;
-            o2CounterEl.innerText = 0;
-            co2CounterEl.innerText = 0;
 
             const rbcCount = 5;
             const spacing = (canvas.width + 120) / rbcCount;
@@ -449,9 +432,9 @@
             // Automatización de entrada de aire (Inhalación continua)
             if (isRunning) {
                 autoBreathTimer++;
-                if (autoBreathTimer % Math.floor(120 / speedMultiplier) === 0) {
-                    for (let i = 0; i < 4; i++) {
-                        particles.push(new Particle('O2', Math.random() * (canvas.width - 40) + 20, Math.random() * 40 + 20));
+                if (autoBreathTimer % 180 === 0) {
+                    for(let i = 0; i < 4; i++) {
+                        particles.push(new Particle('O2', Math.random() * (canvas.width - 40) + 20, 20));
                     }
                 }
             }
@@ -469,72 +452,37 @@
             requestAnimationFrame(animate);
         }
 
-        // Listener de botones
-        document.getElementById('playPauseBtn').addEventListener('click', function() {
+        initSimulation();
+        animate();
+
+        // Controles de botones
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        playPauseBtn.addEventListener('click', () => {
             isRunning = !isRunning;
-            this.querySelector('span').innerText = isRunning ? 'Pausar' : 'Reanudar';
-            this.querySelector('i').className = isRunning ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+            playPauseBtn.innerHTML = isRunning ? 
+                '<i class="fa-solid fa-pause"></i> <span>Pausar</span>' : 
+                '<i class="fa-solid fa-play"></i> <span>Reanudar</span>';
         });
 
-        document.getElementById('resetBtn').addEventListener('click', function() {
+        document.getElementById('resetBtn').addEventListener('click', () => {
             initSimulation();
         });
 
-        document.getElementById('speedSelect').addEventListener('change', function(e) {
+        document.getElementById('inhaleBtn').addEventListener('click', () => {
+            for(let i = 0; i < 10; i++) {
+                particles.push(new Particle('O2', Math.random() * (canvas.width - 40) + 20, Math.random() * 40 + 10));
+            }
+        });
+
+        document.getElementById('exhaleBtn').addEventListener('click', () => {
+            for(let i = 0; i < 6; i++) {
+                particles.push(new Particle('CO2', Math.random() * (canvas.width - 40) + 20, canvas.height * 0.7));
+            }
+        });
+
+        document.getElementById('speedSelect').addEventListener('change', (e) => {
             speedMultiplier = e.target.value === 'fast' ? 2.2 : 1;
         });
-
-        document.getElementById('inhaleBtn').addEventListener('click', function() {
-            for (let i = 0; i < 15; i++) {
-                particles.push(new Particle('O2', Math.random() * canvas.width, Math.random() * 80 + 20));
-            }
-        });
-
-        document.getElementById('exhaleBtn').addEventListener('click', function() {
-            particles = particles.filter(p => !(p.type === 'CO2' && p.y < canvas.height * 0.5));
-        });
-
-        // Tooltip al hacer clic
-        canvas.addEventListener('click', function(e) {
-            const rect = canvas.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            const clickY = e.clientY - rect.top;
-
-            const membraneY = canvas.height * 0.52;
-
-            if (Math.abs(clickY - membraneY) < 15) {
-                showTooltip("Membrana Alvéolo-Capilar: Pared ultra delgada que permite la difusión de gases.", clickX, clickY);
-            } else if (clickY < membraneY) {
-                showTooltip("Cavidad Alveolar: Contiene aire rico en Oxígeno (O₂) renovado continuamente.", clickX, clickY);
-            } else {
-                let hitRBC = false;
-                rBCs.forEach(rbc => {
-                    if (Math.hypot(rbc.x - clickX, rbc.y - clickY) < rbc.radius * 1.5) {
-                        const status = rbc.oxygenLevel > 0.5 ? "Oxigenado (Hemoglobina rica en O₂)" : "Desoxigenado (Buscando O₂)";
-                        showTooltip(`Glóbulo Rojo (Eritrocito): ${status}`, clickX, clickY);
-                        hitRBC = true;
-                    }
-                });
-
-                if (!hitRBC) {
-                    showTooltip("Torrente Sanguíneo: Capilar pulmonar por donde circulan los eritrocitos.", clickX, clickY);
-                }
-            }
-        });
-
-        function showTooltip(text, x, y) {
-            tooltipText.innerText = text;
-            tooltip.style.left = `${Math.min(x, canvas.width - 200)}px`;
-            tooltip.style.top = `${y + 10}px`;
-            tooltip.classList.remove('hidden');
-
-            setTimeout(() => {
-                tooltip.classList.add('hidden');
-            }, 3000);
-        }
-
-        initSimulation();
-        animate();
     </script>
 </body>
 </html>
